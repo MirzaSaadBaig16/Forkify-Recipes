@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@100;200;300;400;500;600;700;800&family=Macondo&family=Poppins:wght@200;300;400;500;600;700;800&family=Sacramento&family=Tsukimi+Rounded:wght@300;400;500;600;700&family=Varela+Round&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Poppins", sans-serif !important;
+}
+
+:root {
+    --primary-Color: #fad888;
+    --secondary-Color: #f48c82;
+    --white-Color: #ffffff;
+    --black-Color: #090909;
+    --text-Color-Dark: #111111;
+    --text-Color-Medium: #444444;
+    --text-Color-Light: #ffffff;
+}
+
+.mainCont {
+    width: 100vw;
+    background: var(--primary-Color);
+    background: linear-gradient(to top left, #f48c82, #fad888);
+    background: -webkit-linear-gradient(to top left, #f48c82, #fad888);
+    padding: 4vh 40px 0px 40px !important;
+}
+
+.mainCont .subCont {
+    width: 100%;
+    min-height: 96vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+}
+
+.subCont .navbar {
+    height: 12vh;
+    min-height: 12vh;
+    /* background-color: aquamarine; */
+}
+
+.logoArea,
+.searchArea,
+.optionArea {
+    height: 100%;
+    padding: 15px 20px !important;
+}
+
+.logoArea .logo {
+    width: 100%;
+    height: 100%;
+    /* background-color: lightcoral; */
+    padding: 0px 20px;
+}
+
+.logo img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.searchArea .searchbar {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-Color);
+    padding: 0px 0px;
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.searchbar input {
+    width: 73%;
+    height: 100%;
+    padding: 0px 20px;
+    border: 0px;
+    outline: 0px;
+    font-size: 1.6rem;
+    background-color: transparent;
+}
+
+input::-webkit-search-cancel-button {
+    display: none;
+}
+
+.searchbar input::placeholder {
+    color: rgb(180, 180, 180);
+}
+
+.searchbar .searchButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.searchButton button {
+    border: 0px;
+    outline: 0px;
+    height: 100%;
+    padding: 0px 32px;
+    border-radius: 100px;
+    font-size: 1.6rem;
+    color: var(--text-Color-Light);
+    background: linear-gradient(to top left, var(--secondary-Color), var(--primary-Color));
+}
+
+.optionArea .options {
+    width: 100%;
+    height: 100%;
+    /* background-color: lightcoral; */
+    padding: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.options button {
+    border: 0px;
+    outline: 0px;
+    /* height: 100%; */
+    padding: 1px 10px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--text-Color-Dark);
+    background-color: transparent;
+    display: flex;
+    align-items: flex-start;
+}
+
+.options button i {
+    font-size: 2.2rem;
+    color: var(--secondary-Color);
+}
+
+.subCont .contentArea {
+    height: 84vh;
+    min-height: 84vh;
+}
+
+.contentArea .searchItemsArea {
+    height: 100%;
+    background-color: var(--white-Color);
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    overflow: auto;
+}
+
+.searchItemsArea::-webkit-scrollbar {
+    width: 8px;
+}
+
+.searchItemsArea::-webkit-scrollbar-track {
+    background: var(--white-Color);
+}
+
+.searchItemsArea::-webkit-scrollbar-thumb {
+    background: linear-gradient(to top, var(--secondary-Color), var(--primary-Color));
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.searchItemsArea .errorMsg {
+    width: 100%;
+    padding: 20px;
+    display: none;
+}
+
+.errorMsg h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--text-Color-Medium);
+    font-family: "Varela Round", sans-serif;
+    color: var(--secondary-Color);
+}
+
+.searchItemsArea .srchItem {
+    width: 100%;
+}
+
+.srchItem .item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 35px;
+    background-color: transparent;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: rgba(244, 140, 130, 0.1);
+}
+
+.item .itemImage {
+    width: 57px;
+    height: 57px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.itemImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(0.8);
+}
+
+.item .itemName {
+    width: 78%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    font-family: "Varela Round", sans-serif;
+}
+
+.itemName h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #f48c82;
+}
+
+.itemName h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--text-Color-Medium);
+}
+
+.contentArea .itemRecipeArea {
+    height: 100%;
+    /* background-color: #888888; */
+}
+
+.itemRecipeArea .defaultMsg {
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.defaultMsg i {
+    font-size: 2rem;
+    color: var(--secondary-Color);
+}
+
+.defaultMsg h2 {
+    font-size: 1.8rem;
+    font-family: "Varela Round", sans-serif;
+    color: var(--text-Color-Medium);
+    line-height: 2.4rem;
+}
+
+.itemRecipeArea .itemRecipe {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+.itemRecipe::-webkit-scrollbar {
+    width: 8px;
+}
+
+.itemRecipe::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.itemRecipe::-webkit-scrollbar-thumb {
+    background: linear-gradient(to top, var(--secondary-Color), var(--primary-Color));
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.itemRecipe .itemRecipeAbout {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.itemRecipeAbout .itemRecipeImage {
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+}
+
+.itemRecipeImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    filter: brightness(0.8);
+}
+
+.itemRecipeAbout .itemRecipeTitle {
+    position: absolute;
+    max-width: 80%;
+    bottom: 24%;
+    padding: 15px 20px;
+    background: linear-gradient(to top, var(--secondary-Color), var(--primary-Color));
+    color: var(--text-Color-Light);
+    border-radius: 4px;
+    transform: skewY(-2deg);
+}
+
+.itemRecipeTitle h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-family: "Varela Round", sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.itemRecipeAbout .itemRecipeAbt {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0px 80px 30px 80px;
+}
+
+.itemRecipeAbt .rcpAbt {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.rcpAbt .time,
+.rcpAbt .serve {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.time h5,
+.serve h5 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-family: "Varela Round", sans-serif;
+    color: var(--text-Color-Medium);
+}
+
+.time h5 span,
+.serve h5 span {
+    font-weight: bold;
+}
+
+.time i {
+    font-size: 2rem;
+    color: var(--secondary-Color);
+}
+
+.serve i {
+    font-size: 2.4rem;
+    color: var(--secondary-Color);
+}
+
+.itemRecipeAbt .rcpSavedBtn {
+    border: none;
+    outline: none;
+    border-radius: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, var(--secondary-Color), var(--primary-Color));
+    color: var(--text-Color-Light);
+}
+
+.itemRecipe .itemRecipeIngredients {
+    width: 100%;
+    background-color: #f7e1e1;
+    padding: 5% 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.itemRecipeIngredients .rcpIngredientHd {
+    text-align: center;
+}
+
+.rcpIngredientHd h4 {
+    font-size: 2rem;
+    color: var(--secondary-Color);
+    font-family: "Varela Round", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.itemRecipeIngredients .rcpIngredients {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 20px 0px; */
+}
+
+.rcpIngredients .ingredient {
+    width: 50%;
+    padding: 10px 0px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.ingredient i {
+    font-size: 1.8rem;
+    color: var(--secondary-Color);
+}
+
+.ingredient p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-Color-Medium);
+}
+
+.itemRecipe .itemRecipeDescription {
+    width: 100%;
+    padding: 6% 12%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    font-family: "Varela Round", sans-serif;
+}
+
+.itemRecipeDescription h4 {
+    font-size: 2rem;
+    color: var(--secondary-Color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.itemRecipeDescription p {
+    font-size: 1.6rem;
+    color: var(--text-Color-Medium);
+}
+
+.itemRecipeDescription p span {
+    font-weight: bold;
+}
